@@ -1,3 +1,4 @@
 FROM alpine:latest
 
-RUN apt-get update
+RUN apk update
+RUN add git
