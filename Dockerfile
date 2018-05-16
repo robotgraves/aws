@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.7
 
 RUN apk --update add \
     git \
@@ -10,6 +10,6 @@ RUN apk --update add \
     pip install docker-compose \
     --upgrade awscli
 
-RUN curl /tmp/packer.zip https://releases.hashicorp.com/packer/1.2.3/packer_1.2.3_linux_amd64.zip \
-    sudo unzip /tmp/packer.zip -d /usr/local/bin \
-    echo packer -v
+ADD https://releases.hashicorp.com/packer/1.2.3/packer_1.2.3_linux_amd64.zip /tmp/packer.zip
+RUN unzip /tmp/packer.zip -d /usr/local/bin
+RUN packer -v
