@@ -1,7 +1,9 @@
-FROM alpine:3.7
+FROM ubuntu:16.04
 
-RUN apk --update add \
+RUN apt-get --update \
     git \
+    ansible \
+    bash \
     curl \
     python \
     openssh \
