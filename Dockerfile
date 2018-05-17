@@ -1,8 +1,8 @@
 FROM ubuntu:16.04
 
 RUN apt-get update
-RUN sudo apt-get install git 
-RUN apt-get install ansible \
+RUN apt-get -y install git 
+RUN apt-get -y install ansible \
     bash \
     curl \
     python \
