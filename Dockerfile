@@ -6,7 +6,7 @@ RUN apt-get -y install ansible \
     bash \
     curl \
     python \
-    pip
+    python-pip
 RUN pip install docker-compose \
     upgrade awscli
 
