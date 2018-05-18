@@ -1,13 +1,14 @@
-FROM alpine:3.7
+FROM ubuntu:16.04
 
-RUN apk --update add \
+RUN apt-get update
+RUN apt-get -y install ansible \
     git \
+    bash \
     curl \
     python \
-    openssh \
-    -U py-pip \
-    && \
-    pip install docker-compose \
+    unzip \
+    python-pip
+RUN pip install docker-compose \
     --upgrade awscli
 
 ADD https://releases.hashicorp.com/packer/1.2.3/packer_1.2.3_linux_amd64.zip /tmp/packer.zip
