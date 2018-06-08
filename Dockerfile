@@ -7,7 +7,8 @@ RUN apt-get -y install ansible \
     curl \
     python \
     unzip \
-    python-pip
+    python-pip \
+    jq
 RUN pip install docker-compose \
     --upgrade awscli \
     --upgrade ansible
